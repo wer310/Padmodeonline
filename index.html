@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pad Mode 4x4</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 100px); /* 4 колонки по 100px */
+            grid-gap: 10px;
+        }
+
+        .pad {
+            width: 100px;
+            height: 100px;
+            border: 2px solid white;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pad:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid">
+        <div class="pad" data-sound="sound1.mp3">1</div>
+        <div class="pad" data-sound="sound2.mp3">2</div>
+        <div class="pad" data-sound="sound3.mp3">3</div>
+        <div class="pad" data-sound="sound4.mp3">4</div>
+        <div class="pad" data-sound="sound5.mp3">5</div>
+        <div class="pad" data-sound="sound6.mp3">6</div>
+        <div class="pad" data-sound="sound7.mp3">7</div>
+        <div class="pad" data-sound="sound8.mp3">8</div>
+        <div class="pad" data-sound="sound9.mp3">9</div>
+        <div class="pad" data-sound="sound10.mp3">10</div>
+        <div class="pad" data-sound="sound11.mp3">11</div>
+        <div class="pad" data-sound="sound12.mp3">12</div>
+        <div class="pad" data-sound="sound13.mp3">13</div>
+        <div class="pad" data-sound="sound14.mp3">14</div>
+        <div class="pad" data-sound="sound15.mp3">15</div>
+        <div class="pad" data-sound="sound16.mp3">16</div>
+    </div>
+
+    <script>
+        const pads = document.querySelectorAll('.pad');
+
+        pads.forEach(pad => {
+            pad.addEventListener('click', () => {
+                const sound = new Audio(pad.getAttribute('data-sound'));
+                sound.play();
+            });
+        });
+    </script>
+
+</body>
+</html>
